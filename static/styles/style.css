@@ -72,19 +72,33 @@ h2 {
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     top: 0;
     left: 0;
     z-index: 99;
 }
 
+.navigatie-header > div:first-child {
+    flex-shrink: 0; 
+    position: absolute;
+}
 
-.navigatie-header img {
-    /* margin-left: auto; */
-    justify-content: center;
+.navigatie-header > div:nth-child(2) {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
 .navigatie-header svg {
+    margin: 18px; 
+}
+
+.navigatie-header img{
+    justify-content: center;
+}
+
+.navigatie-header svg{
     margin: 18px;
 }
 
@@ -104,21 +118,18 @@ h2 {
     z-index: 99;
 }
 
-.navigatie-footer a {
+.navigatie-footer a{
     margin: 10px;
 }
 
-.navigatie-footer a:first-child {
+.navigatie-footer a:first-child{
     margin-right: 50px;
 }
 
-.navigatie-footer a:last-child {
+.navigatie-footer a:last-child{
     margin-left: 50px;
 }
-
 /* #end region nav */
-
-
 
 /* #region header */
 header {
@@ -596,9 +607,9 @@ li {
     margin-top: 0;
 }
 
-/* .ResultsHeading {
-    display: flex;
-} */
+.ResultsHeading {
+    /* display: flex; */
+}
 
 .ResultsHeading>img {
     margin-left: auto;
@@ -622,20 +633,19 @@ li {
     flex-direction: column;
 }
 
-.SearchResult div {
+.SearchResult div{
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(0deg, rgba(235, 192, 218, 1) 10%, rgba(0, 0, 0, 0) 40%);
+    background: linear-gradient(0deg, rgba(235,192,218,1) 10%, rgba(0,0,0,0) 40%);
     height: 15em;
     width: 100%;
     z-index: 1;
     border-radius: 31px;
 }
-
 .SearchResult h3 {
-    /* position: absolute; */
-    bottom: 2em;
+    position: absolute;
+    bottom: 4em;
     left: 1em;
     font-weight: bolder;
     font-style: italic;
@@ -644,16 +654,34 @@ li {
 }
 
 .SearchResult p {
-    /* position: absolute; */
-    bottom: 1em;
-    left: 1em;
     font-style: italic;
     color: var(--swiper-theme-color);
     font-weight: 500;
     z-index: 2;
 }
 
-.SearchResult button {
+
+.SearchResult .brandstof {
+    position: absolute;
+    bottom: 3em;
+    left: 1em;
+}
+
+.SearchResult .bouwjaar {
+    position: absolute;
+    bottom: 2em;
+    left: 1em;
+}
+
+
+.SearchResult .kilometers {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+
+.SearchResult button
+{
     position: absolute;
     top: 1em;
     right: 1em;
@@ -663,12 +691,9 @@ li {
     padding: 0;
     z-index: 99;
 }
-
-.SearchResult button:active {
+.SearchResult button:active{
     filter: opacity(50%);
 }
-
-
 /* #endregion results */
 
 /* #region update */
@@ -821,7 +846,6 @@ li {
     margin-bottom: 0;
 }
 
-
 .BodyAvatar {
     margin-left: 35%;
     margin-top: 2em;
@@ -845,7 +869,7 @@ li {
     margin-top: 10px;
 }
 
-.account-box img {
+.account-box img{
     align-self: center;
     justify-self: center;
     margin: 80px;
@@ -880,21 +904,22 @@ li {
     outline-color: #4E4E4E;
     outline-style: solid;
     outline-width: 3px;
-    border-top-left-radius: 10px;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
     font-size: 16px;
     padding: 20px 45px 20px 20px;
     margin-right: 6px;
+    margin-top: 0;
 }
 
 .account-input-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: .5em;
 }
 
 .account-box button {
-    width: auto;
     height: 2em;
     background: #FFA800;
     border: none;
@@ -902,27 +927,26 @@ li {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1em;
     color: #FFF;
     font-weight: 600;
     padding: 1.5em;
     padding-bottom: 2.5em;
 }
 
-.AccountPasswordButton {
+.account-button {
     width: 100%;
     height: 2em;
     background: #FFA800;
     border: none;
     outline: none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: .5em;
     cursor: pointer;
     font-size: 16px;
     color: #FFF;
     font-weight: 600;
     padding: 10em;
-
+    margin-bottom: .5em;
 }
 
 .FormAvatar {
@@ -1331,5 +1355,4 @@ li {
     margin: 10px;
     margin-left: 25%;
 }
-
 /* #endregion deleted account */
