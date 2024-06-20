@@ -24,8 +24,12 @@
                 </div>
             <% } else{ %>  
             <div class="detail-background" style="background-image: url(/images/auto/<%= auto.afbeelding %>);">
+            <div id="like">
+                <img id="like-icon" class="heart" src="/images/Heart1.svg" height="50px" width="50px">
+            </div>
                     <div class="detail-icons">
                         <h2 class="car-name"><%= auto.merk %></h2>
+                        
                         <ul class="detailResultsList">
                             <li class="model-car">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -70,21 +74,27 @@
 
         <%- include('../partials/navFooter'); %> 
         <script src="/scripts/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
         <script>
-            var map = new ol.Map({
-    target: 'map',
-    layers: [
-        new ol.layer.Tile({
-            source: new ol.source.OSM()
-        })
-    ],
-    view: new ol.View({
-        center: ol.proj.fromLonLat([4.895168, 52.370216]),  // Longitude, Latitude of Amsterdam
-        zoom: 12
-    })
+            var likeIcon = document.getElementById('like-icon');
+
+var Liked = false;
+
+document.getElementById("like-icon").addEventListener('click', function() {
+
+    likeIcon.classList.add('jump');
+    Liked = !Liked;
+
+    if (Liked) {
+        likeIcon.src = "/images/Heart1.svg";
+        console.log("help");
+    } else {
+        likeIcon.src = '/images/Heart2.svg';
+    }
+
+    setTimeout(() => {
+    likeIcon.classList.remove('jump');
+    }, 500); 
 });
         </script>
-        
     </body>
 </html>

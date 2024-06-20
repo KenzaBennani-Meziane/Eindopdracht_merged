@@ -190,25 +190,7 @@ function showResults() {
         hideLoadingAfterTimeout();
     };
 
-    function toggleLike() {
-        const likeIcon = document.getElementById('like-icon');
-        
-        // Add jump animation class
-        likeIcon.classList.add('jump');
     
-        setTimeout(() => {
-        if (likeIcon.src.includes('heart-red.png')) {
-            likeIcon.src = 'heart-blue.png';
-        } else {
-            likeIcon.src = 'heart-red.png';
-        }
-        likeIcon.classList.remove('jump');
-        }, 500); 
-    }
-    
-    document.getElementById('like-icon').addEventListener('click', toggleLike);
-
-
     // Initialize List.js for sorting and searching
     var options = {
         valueNames: ['merk', 'kilometers', 'Brandstof', 'Bouwjaar']
@@ -319,3 +301,25 @@ var map = new ol.Map({
 });
 
 
+
+
+// var likeIcon = document.getElementById('like-icon');
+
+// var Liked = false;
+
+// document.getElementById("like-icon").addEventListener('click', function() {
+
+//     likeIcon.classList.add('jump');
+//     Liked = !Liked;
+
+//     if (Liked) {
+//         likeIcon.src = "/images/Heart1.svg";
+//         console.log("help");
+//     } else {
+//         likeIcon.src = '/images/Heart2.svg';
+//     }
+
+//     setTimeout(() => {
+//     likeIcon.classList.remove('jump');
+//     }, 500); 
+// });

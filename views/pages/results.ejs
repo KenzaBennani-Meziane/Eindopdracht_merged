@@ -69,9 +69,10 @@
                             <h3 class="merk">
                                 <%= auto.merk %>
                             </h3>
-                            <div>
+                            <div id="like">
                                 <img id="like-icon" class="heart" src="/images/Heart1.svg" height="50px" width="50px">
                             </div>
+                            
                             <% if(mode && mode==='favorites' ) { %>
                                 <form method="post" action="/remove-bookmark"
                                     onsubmit="return confirm('Bookmark verwijderen?')">
@@ -91,6 +92,27 @@
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     showResults();
+                });
+
+                    var likeIcon = document.getElementById('like-icon');
+
+                    var Liked = false;
+
+                    document.getElementById("like-icon").addEventListener('click', function() {
+
+                    likeIcon.classList.add('jump');
+                    Liked = !Liked;
+
+                    if (Liked) {
+                        likeIcon.src = "/images/Heart1.svg";
+                        console.log("help");
+                    } else {
+                        likeIcon.src = '/images/Heart2.svg';
+                    }
+
+                    setTimeout(() => {
+                    likeIcon.classList.remove('jump');
+                    }, 500); 
                 });
             </script>
 </body>
