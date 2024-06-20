@@ -8,10 +8,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Auto</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
         <link href="/styles/style.css" rel="stylesheet">
         <link rel="icon" type="image/svg+xml" href="./images/project_tech_logo_1.png">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
     </head>
     <body class="detail-body">
 
@@ -61,17 +60,31 @@
                         <button type="submit">Opslaan</button>
                     </form>
                 </section>
-                <section class="car-map">
-                    <div id="map"></div>
+                <div class="map"></div>
+                <!-- <section class="car-map">
                     <p>Zoek de dichtstbijzijnde autodealer</p>
                     <button>Zoek nu</button>
-                </section>
+                </section> -->
                 <% } %>
             </main>
 
         <%- include('../partials/navFooter'); %> 
-
         <script src="/scripts/script.js"></script>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
+        <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+        <script>
+            var map = new ol.Map({
+    target: 'map',
+    layers: [
+        new ol.layer.Tile({
+            source: new ol.source.OSM()
+        })
+    ],
+    view: new ol.View({
+        center: ol.proj.fromLonLat([4.895168, 52.370216]),  // Longitude, Latitude of Amsterdam
+        zoom: 12
+    })
+});
+        </script>
+        
     </body>
 </html>

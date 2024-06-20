@@ -427,6 +427,11 @@ li {
     padding: 1em;
 }
 
+.map { 
+    height: 180px; 
+    width: 100%;
+}
+
 /* #endregion DetailPagina */
 
 .BodyLogIn {
@@ -1411,3 +1416,33 @@ li {
     margin-left: 25%;
 }
 /* #endregion deleted account */
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #24242485;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.loader {
+    /* border: 4px solid #f3f3f3; 
+    border-top: 4px solid #3498db;
+    border-radius: 50%; */
+    animation: spin 2s linear infinite;
+}
+
+.loader img{
+    height: 5em;
+    width: 5em;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

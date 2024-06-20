@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Map
+
+// Initialize the map and set its view to your chosen geographical coordinates and zoom level
 
 const KleurKnopPrev = () => {
     KleurWaarde -= 1;
@@ -161,6 +164,32 @@ function closeForm() {
 }
 
 function showResults() {
+    // // Function to hide the loading screen and show the main content
+    // function hideLoadingScreen() {
+    //     document.getElementById('loading-screen').style.display = 'none';
+    //     document.getElementById('main-content').style.display = 'block';
+    // }
+    
+    // // Simulate a delay to show the loading screen (replace with your actual loading logic)
+    // function simulateLoading() {
+    //     setTimeout(() => {
+    //     hideLoadingScreen();
+    //     }, 2000); // Adjust the timeout as needed (in milliseconds)
+    // }
+    
+    // // Ensure the loading screen hides after 5 seconds regardless of loading status
+    // function hideLoadingAfterTimeout() {
+    //     setTimeout(() => {
+    //     hideLoadingScreen();
+    //     }, 5000); // 5 seconds timeout
+    // }
+    
+    // // Call the functions when the window finishes loading
+    // window.onload = function() {
+    //     simulateLoading();
+    //     hideLoadingAfterTimeout();
+    // };
+
     // Initialize List.js for sorting and searching
     var options = {
         valueNames: ['merk', 'kilometers', 'Brandstof', 'Bouwjaar']
@@ -238,7 +267,7 @@ function showResults() {
         // applyFilters();
         var brandstofFilter = document.getElementById('brandstofFilter').value.toLowerCase();        
         carList.filter(function (item) {
-            var brandstofMatch = brandstofFilter === '' || item.values().Brandstof.toLowerCase() === brandstofFilter;
+            var brandstofMatch = brandstofFilter === '' || this.item.values().Brandstof.toLowerCase() === brandstofFilter;
             return brandstofMatch;
         });
         
@@ -256,3 +285,18 @@ const LoadResults = () => {
     showResults();
     OnLoadResults();
 }
+
+var map = new ol.Map({
+    target: 'map',
+    layers: [
+        new ol.layer.Tile({
+            source: new ol.source.OSM()
+        })
+    ],
+    view: new ol.View({
+        center: ol.proj.fromLonLat([4.895168, 52.370216]),  // Longitude, Latitude of Amsterdam
+        zoom: 12
+    })
+});
+
+

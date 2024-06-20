@@ -18,11 +18,15 @@
     <%- include('../partials/navHeader'); %>
 
         <main id="ResultsPage">
+            <div id="loading-screen">
+                <div class="loader"><img src="https://cdn-icons-png.flaticon.com/512/20/20980.png"></div>
+                <p>Loading...</p>
+            </div>
             <h2>
                 <%= title %>
             </h2>
             <section class="SortingButtons">
-                <input type="search" class="search" placeholder="Wat zoek je?">
+                <input type="search" class="search" placeholder="Zoeken">
                 <button class="sort" data-sort="merk" data-default-order='asc'>Merk</button>
                 <button class="sort" data-sort="kilometers" data-default-order='asc'>Kilometers</button>
                 <button class="sort" data-sort="Brandstof" data-default-order='asc'>Brandstof</button>
@@ -65,6 +69,7 @@
                             <h3 class="merk">
                                 <%= auto.merk %>
                             </h3>
+                            <img src="/images/heart.svg" height="50px" width="50px">
                             <% if(mode && mode==='favorites' ) { %>
                                 <form method="post" action="/remove-bookmark"
                                     onsubmit="return confirm('Bookmark verwijderen?')">
