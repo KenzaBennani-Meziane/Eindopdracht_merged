@@ -47,17 +47,13 @@ Esmé Lindeman
 Sindy de Jong
 Furkan Tura
 Yani Karagiannis
-Kenza
+Kenza Bennani-Meziane
 
 ## Versie
 Dit is de eerste versie van dit project, versie 1.0
 
 ## Licentie
 Dit project valt onder de [MPL-licentie](LICENSE).
-
-  ### Auteur:
-  Esmé Lindeman & Sindy de Jong
-
 
 ## Je website
 
