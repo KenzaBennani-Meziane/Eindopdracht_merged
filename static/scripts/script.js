@@ -164,31 +164,31 @@ function closeForm() {
 }
 
 function showResults() {
-    // // Function to hide the loading screen and show the main content
-    // function hideLoadingScreen() {
-    //     document.getElementById('loading-screen').style.display = 'none';
-    //     document.getElementById('main-content').style.display = 'block';
-    // }
+    // Function to hide the loading screen and show the main content
+    function hideLoadingScreen() {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    }
     
-    // // Simulate a delay to show the loading screen (replace with your actual loading logic)
-    // function simulateLoading() {
-    //     setTimeout(() => {
-    //     hideLoadingScreen();
-    //     }, 2000); // Adjust the timeout as needed (in milliseconds)
-    // }
+    // Simulate a delay to show the loading screen (replace with your actual loading logic)
+    function simulateLoading() {
+        setTimeout(() => {
+        hideLoadingScreen();
+        }, 2000); // Adjust the timeout as needed (in milliseconds)
+    }
     
-    // // Ensure the loading screen hides after 5 seconds regardless of loading status
-    // function hideLoadingAfterTimeout() {
-    //     setTimeout(() => {
-    //     hideLoadingScreen();
-    //     }, 5000); // 5 seconds timeout
-    // }
+    // Ensure the loading screen hides after 5 seconds regardless of loading status
+    function hideLoadingAfterTimeout() {
+        setTimeout(() => {
+        hideLoadingScreen();
+        }, 5000); // 5 seconds timeout
+    }
     
-    // // Call the functions when the window finishes loading
-    // window.onload = function() {
-    //     simulateLoading();
-    //     hideLoadingAfterTimeout();
-    // };
+    // Call the functions when the window finishes loading
+    window.onload = function() {
+        simulateLoading();
+        hideLoadingAfterTimeout();
+    };
 
     // Initialize List.js for sorting and searching
     var options = {
