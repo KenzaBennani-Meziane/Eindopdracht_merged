@@ -1446,3 +1446,21 @@ li {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.heart {
+    /* width: 100%; */
+    /* height: auto; */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Animation for the heart jump */
+.heart.jump {
+    animation: jump 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}

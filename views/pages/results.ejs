@@ -69,7 +69,9 @@
                             <h3 class="merk">
                                 <%= auto.merk %>
                             </h3>
-                            <img src="/images/heart.svg" height="50px" width="50px">
+                            <div>
+                                <img id="like-icon" class="heart" src="/images/Heart1.svg" height="50px" width="50px">
+                            </div>
                             <% if(mode && mode==='favorites' ) { %>
                                 <form method="post" action="/remove-bookmark"
                                     onsubmit="return confirm('Bookmark verwijderen?')">

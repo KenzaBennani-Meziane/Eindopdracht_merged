@@ -190,6 +190,25 @@ function showResults() {
         hideLoadingAfterTimeout();
     };
 
+    function toggleLike() {
+        const likeIcon = document.getElementById('like-icon');
+        
+        // Add jump animation class
+        likeIcon.classList.add('jump');
+    
+        setTimeout(() => {
+        if (likeIcon.src.includes('heart-red.png')) {
+            likeIcon.src = 'heart-blue.png';
+        } else {
+            likeIcon.src = 'heart-red.png';
+        }
+        likeIcon.classList.remove('jump');
+        }, 500); 
+    }
+    
+    document.getElementById('like-icon').addEventListener('click', toggleLike);
+
+
     // Initialize List.js for sorting and searching
     var options = {
         valueNames: ['merk', 'kilometers', 'Brandstof', 'Bouwjaar']
