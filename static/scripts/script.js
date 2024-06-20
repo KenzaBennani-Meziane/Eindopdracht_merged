@@ -152,6 +152,13 @@ function navigateToResults() {
 
     window.location.href = url;
 }
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
 
 function showResults() {
     // Initialize List.js for sorting and searching
@@ -206,7 +213,32 @@ function showResults() {
         image.style.filter = 'invert(72%) sepia(74%) saturate(991%) hue-rotate(64deg) brightness(103%) contrast(101%)';
     } else if (sessionStorage.getItem("Kleur") == 3) {
         image.style.filter = 'invert(51%) sepia(69%) saturate(6308%) hue-rotate(209deg) brightness(106%) contrast(101%)';
+    };
+    
+    // Filter functionality
+    function applyFilters() {
+        document.getElementById('filterForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+        // applyFilters();
+        var brandstofFilter = document.getElementById('brandstofFilter').value.toLowerCase();        
+        carList.filter(function (item) {
+            var brandstofMatch = brandstofFilter === '' || item.values().Brandstof.toLowerCase() === brandstofFilter;
+            return brandstofMatch;
+        });
+    });
     }
+    
+    
+    // function applyFilters() {
+    //     console.log("test");
+    //     var brandstofFilter = document.getElementById('brandstofFilter').value.toLowerCase();        
+    //     carList.filter(function (item) {
+    //         var brandstofMatch = brandstofFilter === '' || item.values().Brandstof.toLowerCase() === brandstofFilter;
+    //         return brandstofMatch;
+    //     });
+    // };
+    
+    
 }
 
 const OnLoadResults = () => {

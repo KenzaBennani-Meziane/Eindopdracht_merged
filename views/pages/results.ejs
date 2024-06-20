@@ -27,6 +27,28 @@
                 <button class="sort" data-sort="kilometers" data-default-order='asc'>Kilometers</button>
                 <button class="sort" data-sort="Brandstof" data-default-order='asc'>Brandstof</button>
                 <button class="sort" data-sort="Bouwjaar" data-default-order='asc'>Bouwjaar</button>
+
+                <!-- A button to open the popup form -->
+                <button class="open-button" onclick="openForm()">Open Form</button>
+
+                <!-- The form -->
+                <div class="form-popup" id="myForm">
+                    <form id="filterForm" class="form-container">
+                        <h1>Filter</h1>
+    
+                        <label for="brandstof"><b>Brandstof</b></label>
+                        <select id="brandstofFilter" name="brandstof">
+                            <option value="">Alle brandstoffen</option>
+                            <option value="benzine">Benzine</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="elektrisch">Elektrisch</option>
+                            <option value="hybride">Hybride</option>
+                        </select>
+    
+                        <button type="submit" class="btn" onclick="applyFilters()">Filter</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
+                </div>
             </section>
             <section id="theList">
                 <ul class="SearchResultList list">
