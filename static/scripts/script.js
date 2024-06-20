@@ -216,6 +216,22 @@ function showResults() {
     };
     
     // Filter functionality
+
+    // Get the current URL
+    var currentUrl = window.location.href;
+
+    // // Build the parameter string
+    var brandstofParam = '&brandstof=' + encodeURIComponent(brandstofFilter);
+
+    // // Check if there are existing parameters
+    // var separator = currentUrl.indexOf('?') !== -1 ? '&' : '?';
+
+    // // Append the parameter to the URL
+    // var newUrl = currentUrl + separator + brandstofParam;
+
+    // // Replace the current URL with the new URL
+    // window.history.replaceState({}, document.title, newUrl);
+    
     function applyFilters() {
         document.getElementById('filterForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form submission
@@ -225,19 +241,9 @@ function showResults() {
             var brandstofMatch = brandstofFilter === '' || item.values().Brandstof.toLowerCase() === brandstofFilter;
             return brandstofMatch;
         });
+        
     });
     }
-    
-    
-    // function applyFilters() {
-    //     console.log("test");
-    //     var brandstofFilter = document.getElementById('brandstofFilter').value.toLowerCase();        
-    //     carList.filter(function (item) {
-    //         var brandstofMatch = brandstofFilter === '' || item.values().Brandstof.toLowerCase() === brandstofFilter;
-    //         return brandstofMatch;
-    //     });
-    // };
-    
     
 }
 
