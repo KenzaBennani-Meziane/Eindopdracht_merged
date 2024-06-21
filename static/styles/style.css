@@ -1452,8 +1452,8 @@ li {
 
 #like-d .heart {
     position: absolute;
-    top: 70px;
-    left: 115px;
+    bottom: 70px;
+    right: 30px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }

@@ -251,7 +251,6 @@ function showResults() {
     var currentUrl = window.location.href;
 
     // // Build the parameter string
-    var brandstofParam = '&brandstof=' + encodeURIComponent(brandstofFilter);
 
     // // Check if there are existing parameters
     // var separator = currentUrl.indexOf('?') !== -1 ? '&' : '?';
@@ -277,6 +276,8 @@ function showResults() {
     
 }
 
+var brandstofParam = '&brandstof=' + encodeURIComponent(brandstofFilter);
+
 const OnLoadResults = () => {
 
 }
@@ -299,27 +300,3 @@ var map = new ol.Map({
         zoom: 12
     })
 });
-
-
-
-
-// var likeIcon = document.getElementById('like-icon');
-
-// var Liked = false;
-
-// document.getElementById("like-icon").addEventListener('click', function() {
-
-//     likeIcon.classList.add('jump');
-//     Liked = !Liked;
-
-//     if (Liked) {
-//         likeIcon.src = "/images/Heart1.svg";
-//         console.log("help");
-//     } else {
-//         likeIcon.src = '/images/Heart2.svg';
-//     }
-
-//     setTimeout(() => {
-//     likeIcon.classList.remove('jump');
-//     }, 500); 
-// });
